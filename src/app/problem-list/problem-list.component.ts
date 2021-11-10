@@ -46,6 +46,8 @@ export class ProblemListComponent implements OnInit {
   // }
   onSubmit(index:any){
     let check = localStorage.getItem("userInfo");
+    console.log("++++++++++++++++++++++++++++==",check);
+    
     if(check && JSON.parse(check) != {}){
       this.userId = JSON.parse(check).userId;
     }
@@ -73,17 +75,17 @@ export class ProblemListComponent implements OnInit {
     //   (res) => console.log(res),
     //   (err) => console.log(err)
     // );
-    this.http.post<any>('http://129.200.10.69:8001/file', formData).subscribe(
+    this.http.post<any>('http://localhost:8001/file', formData).subscribe(
       (res) => {
 
         this.userSubmission=res.submission;
         console.log(this.userSubmission);
-        const userSubmissionForm = new FormData();
-        formData.append('index', res.submission);
-        this.http.post('http://127.0.0.1:3000/api/submission', formData)
-        .subscribe(data => {
-          console.log(data);
-        });
+        // const userSubmissionForm = new FormData();
+        // formData.append('index', res.submission);
+        // this.http.post('http://127.0.0.1:3000/api/submission', formData)
+        // .subscribe(data => {
+        //   console.log(data);
+        // });
         // submmissionAppend(this.userSubmission);
         // console.log(this.userSubmission.submission);
         // const submissionData = new FormData();
