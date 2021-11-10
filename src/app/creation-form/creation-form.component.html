@@ -1,0 +1,13 @@
+<div id="headerOfForm">
+    <h3>New note</h3>
+    <div id="buttons">
+        <button (click)="windowMinimize()" id="minimizeWindowBtn"><i class="fas fa-window-minimize"></i></button>
+        <button (click)="cancelCreation()" id="cancelBtn"><i class="fas fa-times"></i></button>
+    </div>
+</div>
+<form (submit)="createNote()">
+    <input class="creationInput" type="text" [(ngModel)]="noteHeader" name="noteHeader" autocomplete="off" placeholder="Header of note"><br>
+    <hr>
+    <textarea class="creationInput" [(ngModel)]="noteText" name="noteText" placeholder="Text of note"></textarea><br>
+    <button type="submit" id="createBtn">Create</button>
+</form>

@@ -1,0 +1,17 @@
+<header  class="header">
+		 <div class="container">
+		  <div class="header_inner">
+        <div class="left">
+          <div class="header_logo">CPPcontest</div>
+     		   <nav class="nav">
+     		    <a class="nav_link" [routerLink]='["/home"]'>Home</a>
+            <a class="nav_link" [routerLink]='["/contest"]'>Contest</a>
+     		   </nav>
+        </div>
+        <div class="right">
+          <div class="header_logo">Welcome {{username}}</div>
+          <button class="nav_link" id="signOut" (click)="signOut()">Sign out</button>
+        </div>
+		  </div>
+		 </div>
+</header>

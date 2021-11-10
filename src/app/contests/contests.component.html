@@ -1,0 +1,37 @@
+<main *ngIf="router.url === '/contest'">
+  <div class="contests">
+    <div class="contests_wrap">
+      <a *ngFor="let contest of contests"  routerLink="/contest/{{contest._id}}/problem"class="contests_button" type="button" name="button">
+        <div  class="contest">
+          <div class="contest_name">
+            <h2>{{contest.name}}</h2>
+            <p>{{contest._id}}</p>
+          </div>
+          <div class="contest_description">
+            <p>{{contest.description}}</p>
+            
+          </div>
+        </div>
+      </a>
+      <!-- <button *ngFor="let contest of contests" (click)="goToTask(contest._id)" class="contests_button" type="button" name="button">
+        <div  class="contest">
+          <div class="contest_name">
+            <h2>{{contest.name}}</h2>
+          </div>
+          <div class="contest_description">
+            <p>{{contest.description}}</p>
+          </div>
+        </div>
+      </button> -->
+      <!-- <div *ngFor="let contest of contests" class="contest">
+        <div class="contest_name">
+          <h2>{{contest.name}}</h2>
+        </div>
+        <div class="contest_description">
+          <p>{{contest.description}}</p>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+</main>

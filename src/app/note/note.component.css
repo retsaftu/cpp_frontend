@@ -1,0 +1,147 @@
+.noteHeaderContent{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+.noteHeaderContent{
+    transition: 0.3s;
+}
+.noteHeaderContent:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.noteHeaderContent h2{
+    overflow: hidden;
+    width: 70%;
+    font-size: 18px;
+    text-align: left;
+}
+.noteHeaderContent input{
+    width: 70%;
+    padding: 5px 10px;
+    border: 1px solid #cfcfcf;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+.noteHeaderContent p{
+    width: 15%;
+}
+.noteHeaderButtons{
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    transition: 0.3s;
+}
+.noteHeaderButtons button{
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    box-sizing: content-box;
+    color: gray;
+    transition: 0.3s;
+    padding: 4px;
+    border-radius: 50%;
+}   
+.noteHeaderButtons button:hover{
+    color: #333;
+    background-color: rgb(236,236,236);
+}
+.noteHeaderButtonsMobile{
+    display: none;
+}
+
+.expand{
+    transform: rotate(180deg);
+}
+.rollUp{
+    transform: rotate(0deg);
+}
+
+.noteContent{ 
+    transition: 0.5s;
+    box-sizing: content-box;
+    width: 100%;
+    overflow-y: auto;
+    opacity: 1;
+    margin-bottom: 3px;
+    max-height: 15em;
+}
+.noteContent p{
+    padding: 15px;
+}
+.noteEditText{
+    max-height: 15em;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: none;
+    margin-bottom: 3px;
+    resize: vertical;
+}
+.expandBtn{
+    display: none;
+}
+.noteButtonsMoblie{
+    display:  none;
+}
+@media only screen and (max-width: 750px){
+    .noteHeaderButtons{
+        display: none;
+    }
+    .noteHeaderContent p{
+        width: 25%;
+    }
+    .expandBtn{
+        display: block;
+        width: 5%;
+        height: 30px;
+        color: gray;
+    }
+    .noteButtonsMoblie{
+        position: fixed;
+        z-index: 10;
+        right: 0%;
+        left: 0%;
+        top: 0%;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(51, 51, 51, 0.3)
+    }
+    .noteButtonsMoblie ul{
+        position: fixed;
+        z-index: 11;
+        bottom: 5%;
+        right: 0%;
+        left: 0%;
+        bottom: 0%;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        box-sizing: border-box;
+        transition: 0.5s;
+        padding: 5px;
+    }
+    .noteButtonsMoblie li{
+        padding: 12px;
+        width: 100%;
+    }
+    .noteButtonsMoblie li button{
+        width: 100%;
+        text-align: left;
+    }
+    .noteButtonsMoblie li button i{
+        margin-right: 15px;
+    }
+    .noteButtonsMoblie hr{
+        border:0.5px solid rgb(80, 80, 80);
+    }
+}

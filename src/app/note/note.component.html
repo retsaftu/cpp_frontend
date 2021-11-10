@@ -1,0 +1,58 @@
+<!-- Block for editing mode -->
+<div *ngIf="editNote" [ngStyle]="{'box-shadow': '0 0 5px rgba(0,0,0,0.3)'}">
+    <form class="editForm" (submit)="updateNote()">
+        <div class="noteHeaderContent">
+            <input type="text" [(ngModel)]="headerOfEditingNote" [innerText]="note.header" name="headerOfEditingNote">
+            <p>{{note.date}}</p>
+            <div class="noteHeaderButtons">
+                <button type="submit"><i class="fas fa-file-export"></i></button>
+                <button (click)="cancelEditing()"><i class="fas fa-times"></i></button>
+                <button [ngClass]="{'expand': showNoteContent, 'rollUp': !showNoteContent}"><i class="fas fa-caret-up"></i></button>
+            </div>
+            <!-- Button for mobile version -->
+            <button class="expandBtn" (click)="showEditMobileMenu()"><i class="fas fa-ellipsis-v"></i></button>
+        </div>
+        <textarea class="noteEditText" [(ngModel)]="textOfEditingNote" name="textOfEditingNote" [innerText]="note.text"></textarea>
+    </form>
+</div>
+
+<!-- Block for view mode -->
+<div @fadeIn *ngIf="!editNote" [ngStyle]="{'box-shadow': showNoteContent ? '0 0 5px rgba(0,0,0,0.3)' : 'none'}">
+    <div class="noteHeader" (click)="showFullNote()">
+        <div class="noteHeaderContent">
+            <h2>{{note.header}}</h2>
+            <p>{{note.date}}</p>
+            <div class="noteHeaderButtons">
+                <button (click)="startEditing()"><i class="fas fa-pen"></i></button>
+                <button (click)="deleteNote()"><i class="fas fa-trash"></i></button>
+                <button [ngClass]="{'expand': showNoteContent, 'rollUp': !showNoteContent}"><i class="fas fa-caret-up"></i></button>
+            </div>
+            <!-- Button for mobile version -->
+            <button class="expandBtn" (click)="expandMobileMendu()"><i class="fas fa-ellipsis-v"></i></button>
+        </div> 
+     </div>
+    <div class="noteContent" [@openClose]="showNoteContent ? 'open' : 'close'">
+        <p>{{note.text}}</p>
+    </div>
+</div>
+
+<!-- Menu for mobile phones -->
+<!-- Menu for normal mode -->
+<div [ngStyle]="{'display': showMobileHeaderButtons ? 'block' : 'none'}" *ngIf="!editNote" class="noteButtonsMoblie" (click)="expandMobileMendu()">
+    <ul *ngIf="!editNote">
+        <li><button (click)="startEditing()"><i class="fas fa-pen"></i> Edit</button></li>
+        <li><button (click)="deleteNote()"><i class="fas fa-trash"></i> Delete</button></li>
+        <hr>
+        <li><button><i class="fas fa-times"></i> Cancel</button></li>
+    </ul>
+</div>
+
+<!-- Menu for edit mode -->
+<div [ngStyle]="{'display': showEditMobileButtons ? 'block' : 'none'}" *ngIf="editNote" class="noteButtonsMoblie" (click)="showEditMobileMenu()">
+    <ul *ngIf="editNote">
+        <li><button (click)="updateNote()"><i class="fas fa-file-export"></i> Save</button></li>
+        <li><button><i class="fas fa-arrow-left"></i> Back to editing</button></li>
+        <hr>
+        <li><button (click)="cancelEditing()"><i class="fas fa-times"> </i> Cancel</button></li>
+    </ul>
+</div>

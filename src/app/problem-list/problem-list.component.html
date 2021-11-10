@@ -1,0 +1,106 @@
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+    <h1 *ngIf="tile.text=='One'">{{task.name}}</h1>
+    <h4 *ngIf="tile.text=='Two'">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </h4>
+    <h1 *ngIf="tile.text=='Good'">GL HF</h1>
+    <h3 *ngIf="tile.text=='Three'">
+      <p>Time: {{task.time}} ms</p>
+      <p>Memory: {{task.memory}} Kb</p>
+      <form>
+        <div>
+          <input type="file" name="image" (change)="selectImage($event)" />
+        </div>
+        <br>
+        <div>
+          <button type="submit" (click)="onSubmit(task.index)">Upload</button>
+        </div>
+      </form>
+    </h3>
+    <h3 *ngIf="tile.text=='Four'">
+
+      <div class="task_header">
+        <h1>Description</h1>
+      </div>
+      <div class="task_description">
+        <p>{{task.description}}</p>
+
+      </div>
+      <div class="task_header">
+        <h1>Input:</h1>
+      </div>
+      <div class="task_description">
+        <p>{{task.inputExample}}</p>
+
+      </div>
+      <div class="task_header">
+        <h1>Output</h1>
+      </div>
+      <div class="task_description">
+        <p>{{task.outputExample}}</p>
+      </div>
+    </h3>
+
+  </mat-grid-tile>
+</mat-grid-list>
+<!-- <div class="task">
+  <div class="task_left">
+    <div class="task_name">
+      <h1>{{task.name}}</h1>
+    </div>
+    <div class="task_limit">
+      <p>Time:</p>
+      <p>{{task.time}}</p>
+      <p>Memory:</p>
+      <p>{{task.memory}}</p>
+
+    </div>
+    <div class="task_submition">
+      <form>
+        <div>
+          <input type="file" name="image" (change)="selectImage($event)" />
+        </div>
+        <br>
+        <div>
+          <button type="submit" (click)="onSubmit(task.index)">Upload</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="task_right">
+    <div class="task_text">
+      <div class="task_header">
+        <h1>Description</h1>
+      </div>
+      <div class="task_description">
+        <p>{{task.description}}</p>
+
+      </div>
+      <div class="task_header">
+        <h1>Input:</h1>
+      </div>
+      <div class="task_description">
+        <p>{{task.inputExample}}</p>
+
+      </div>
+      <div class="task_header">
+        <h1>Output</h1>
+      </div>
+      <div class="task_description">
+        <p>{{task.outputExample}}</p>
+
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <div class="problem-list" >
+  <p>{{task.index}}</p>
+  <a routerLink="{{task.index}}/tasks">{{task.name}}</a>
+</div> -->

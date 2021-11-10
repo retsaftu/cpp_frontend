@@ -1,0 +1,65 @@
+<div class="problem" *ngIf="isContest">
+  <div class="problem_table">
+    <!-- <app-problem-navbar></app-problem-navbar> -->
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Problem" >
+        <mat-tab-group animationDuration="0ms">
+          <mat-tab   *ngFor="let task of tasks" label="{{task.name}}"><app-problem-list [task]="task"></app-problem-list></mat-tab>
+        </mat-tab-group>
+      </mat-tab>
+      <mat-tab label="Status"><app-status></app-status></mat-tab>
+      <mat-tab label="Leader Board">
+        <div class="tab-pane fade" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
+                <h3>LeaderBoard</h3>
+                <div class="table">
+                    <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Rank</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Problem ID</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class = "table-secondary">
+                        <th scope="row">objectId.userId.rank</th>
+                        <td>objectId.userId.userName</td>
+                        <td>objectId.userId.score</td>
+                        <td>objectId.userId.problems.problemId</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">objectId.userId.rank</th>
+                        <td>objectId.userId.userName</td>
+                        <td>objectId.userId.score</td>
+                        <td>objectId.userId.problems.problemId</td>
+                      </tr>
+                      <tr class = "table-secondary">
+                        <th scope="row">objectId.userId.rank</th>
+                        <td>objectId.userId.userName</td>
+                        <td>objectId.userId.score</td>
+                        <td>objectId.userId.problems.problemId</td>
+                      </tr>
+                    <tr>
+                      <th scope="row">objectId.userId.rank</th>
+                      <td>objectId.userId.userName</td>
+                      <td>objectId.userId.score</td>
+                      <td>objectId.userId.problems.problemId</td>
+                    </tr>
+                      </tbody>
+                    </table>
+                    </div>
+            </div>
+      </mat-tab>
+    </mat-tab-group>
+
+    <!-- <router-outlet></router-outlet> -->
+    <!-- <app-problem-list  *ngFor="let task of tasks" [task]="task"></app-problem-list> -->
+<!--
+    <app-problem-status></app-problem-status>
+    <app-problem-leader-board></app-problem-leader-board> -->
+  </div>
+
+</div>

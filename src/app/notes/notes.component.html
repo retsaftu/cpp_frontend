@@ -1,0 +1,19 @@
+<app-navigation></app-navigation>
+<main>
+    <h1>Your notes</h1>
+    <div id="creationForm">
+        <button [ngClass]="{'viewForm': !creation, 'hideForm':creation}" 
+            (click)="startCreatingNewNote()" id="showCreationFormBtn"><i class="fas fa-plus"></i>
+        </button>
+        <div id="creationBlock" [ngClass]="{'viewForm': creation, 'hideForm':!creation}" >
+            <app-creation-form [userInfo]="userInfo" (newNoteCreatedEvent)="createNewNote($event)" (cancelCreationEvent)="cancelCreation()">
+            </app-creation-form>
+        </div>
+    </div>
+    <div id="noNotes" *ngIf="notes.length == 0">
+        <p>No notes yet</p>
+    </div>
+    <div id="notes">
+        <app-note *ngFor="let note of notes" [note]="note" (deleteNoteEvenet)="deleteNoteFromList($event)"></app-note>
+    </div>
+</main>

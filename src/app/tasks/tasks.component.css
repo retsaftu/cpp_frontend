@@ -1,0 +1,76 @@
+.task{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	background-color: #fff;
+  margin: auto;
+  height: 90vh;
+}
+.task_limit{
+  background: #ddd;
+
+	box-sizing: border-box;
+	display: inline-block;
+  box-shadow:.5rem .5rem 1rem rgba(0,0,0,.25);
+  border-radius:.25rem;
+}
+.task_submition{
+  background: #ddd;
+
+	box-sizing: border-box;
+	display: inline-block;
+  box-shadow:.5rem .5rem 1rem rgba(0,0,0,.25);
+  border-radius:.25rem;
+}
+.task_description{
+  background: #ddd;
+
+	box-sizing: border-box;
+	display: inline-block;
+  box-shadow:.5rem .5rem 1rem rgba(0,0,0,.25);
+  border-radius:.25rem;
+}
+.contests_wrap{
+  width: 1200px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.contests_button{
+  margin: 25px 50px;
+}
+.contest{
+  position: relative;
+	width: 300px;
+	height: 150px;
+	background: #ddd;
+
+	box-sizing: border-box;
+	display: inline-block;
+  box-shadow:.5rem .5rem 1rem rgba(0,0,0,.25);
+  border-radius:.25rem;
+}
+.contest_name{
+  width: 200px;
+  height: 60%;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+}
+
+.contest_description{
+  width: 100%;
+  height: 40%;
+  background-color: #333;
+  color: white;
+  border-radius: 0 0 0.25rem .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contest_description p{
+  width: 250px;
+
+}
